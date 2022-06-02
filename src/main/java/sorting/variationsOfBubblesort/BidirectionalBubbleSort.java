@@ -20,9 +20,16 @@ public class BidirectionalBubbleSort<T extends Comparable<T>> extends
 		boolean change;
 		for(int i = 0; i < array.length - 1; i++) {
 			change = false;
-			for (int j = 0; j < array.length -i -1; j++) {
+			for (int j = i; j < array.length -i -1; j++) {
 				if (array[j].compareTo(array[j+1]) > 0) {
 					Util.swap(array, j, j+1);
+					change = true;
+				}
+			}
+
+			for (int k = array.length-2-i; k > 0; k--) {
+				if (array[k].compareTo(array[k-1]) < 0) {
+					Util.swap(array, k, k-1);
 					change = true;
 				}
 			}
