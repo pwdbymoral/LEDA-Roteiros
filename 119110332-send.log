@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-02T11:37:46.133-0300</date>
+  <logger>VINICIUS MORAES VALENCA VARJAO</logger>
+  <level>FINE</level>
+  <message>File 119110332-VINICIUS MORAES VALENCA VARJAO.zip was received. It was sent by VINICIUS MORAES VALENCA VARJAO from IP 192.168.0.2 at 02-06-2022 11*37*46</message>
+</record>
