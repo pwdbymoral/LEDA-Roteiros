@@ -1,5 +1,7 @@
 package sorting.test;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Arrays;
 
 import org.junit.Assert;
@@ -32,6 +34,11 @@ public class StudentSortingTest {
 				11, 18, 36 });
 		populaVetorRepetido(new Integer[] { 4, 9, 3, 4, 0, 5, 1, 4 });
 		populaVetorIgual(new Integer[] { 6, 6, 6, 6, 6, 6 });
+		
+		String[] listaPalavras = new String[] {"Cão", "Yuri", "Gameplay", "José"};
+		Integer[] listaVazia = new Integer[] {};
+		Integer[] listaUmElemento = new Integer[] {7};
+		
 
 		getImplementation();
 	}
@@ -44,8 +51,7 @@ public class StudentSortingTest {
 	private void getImplementation() {
 		// TODO O aluno deve instanciar sua implementação abaixo ao invés de
 		// null
-		this.implementation = new SelectionSort<Integer>();
-		//Assert.fail("Implementation not provided");
+		this.implementation = new RecursiveSelectionSort<Integer>();
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
@@ -112,4 +118,11 @@ public class StudentSortingTest {
 	 * SEGUIR A ESTRUTURA DOS MÉTODOS DE TESTE ACIMA DESCRITOS, ORDENANDO APENAS
 	 * UMA PARTE DO ARRAY.
 	 */
+
+	 @Test
+	 public void testSort06() {
+		Integer[] array =  new Integer[]{25, 37, 42, 82, 2, 7, 9, 23, 23};
+		implementation.sort(array, 5, 8);
+	 }
+
 }
