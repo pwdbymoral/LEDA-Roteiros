@@ -12,7 +12,49 @@ public class MergeSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (leftIndex >= rightIndex) return;
+
+		else {
+			int middleIndex = (leftIndex + rightIndex) / 2;
+			sort(array, leftIndex, middleIndex);
+			sort(array, middleIndex + 1, rightIndex);
+
+			merge(array, leftIndex, middleIndex, rightIndex);
+		}
+		
+	}
+
+	private void merge(T[] array, int leftIndex, int middleIndex, int rightIndex) {
+		T[] auxiliar = (T[]) new Comparable[array.length];
+        for (int i = leftIndex; i <= rightIndex; i++) {
+            auxiliar[i] = array[i];
+		}
+
+		int i = leftIndex;
+		int j = middleIndex +1;
+		int k = leftIndex;
+
+		while (i <= middleIndex && j <= rightIndex) {
+			if (auxiliar[i].compareTo(auxiliar[j]) <= 0) {
+				array[k] = auxiliar[i];
+				i++;
+			} else {
+				array[k] = auxiliar[j];
+				j++;
+			}
+			k++;
+		}
+
+		while (i <= middleIndex) {
+			array[k] = auxiliar[i];
+			i++;
+			k++;
+		}
+
+		while (j <= rightIndex) {
+			array[k] = auxiliar[j];
+			j++;
+			k++;
+		}
 	}
 }
