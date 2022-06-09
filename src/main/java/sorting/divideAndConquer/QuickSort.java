@@ -17,6 +17,8 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
+		if (array == null || array.length <=1) return;
+
 		if (leftIndex < rightIndex) {
 			int pivotIndex = partition(array, leftIndex, rightIndex);
 			sort(array, leftIndex, pivotIndex - 1);
@@ -25,6 +27,9 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSorting<T> {
 	}
 
 	private int partition(T[] array, int leftIndex, int rightIndex) {
+		Random random = new Random();
+		int pivotIndex = random.nextInt(rightIndex - leftIndex + 1) + leftIndex;
+		Util.swap(array, leftIndex, pivotIndex);
 		T pivot = array[leftIndex];
 		int i = leftIndex;
 
