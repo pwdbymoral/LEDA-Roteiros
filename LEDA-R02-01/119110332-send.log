@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-09T15:29:01.719-0300</date>
+  <logger>VINICIUS MORAES VALENCA VARJAO</logger>
+  <level>FINE</level>
+  <message>File 119110332-VINICIUS MORAES VALENCA VARJAO.zip was received. It was sent by VINICIUS MORAES VALENCA VARJAO from IP 192.168.0.3 at 09-06-2022 15*29*01</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-09T16:35:30.030-0300</date>
+  <logger>VINICIUS MORAES VALENCA VARJAO</logger>
+  <level>FINE</level>
+  <message>File 119110332-VINICIUS MORAES VALENCA VARJAO.zip was received. It was sent by VINICIUS MORAES VALENCA VARJAO from IP 192.168.0.3 at 09-06-2022 16*35*29</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-06-12T14:42:40.346-0300</date>
+  <logger>VINICIUS MORAES VALENCA VARJAO</logger>
+  <level>FINE</level>
+  <message>File 119110332-VINICIUS MORAES VALENCA VARJAO.zip was received. It was sent by VINICIUS MORAES VALENCA VARJAO from IP 192.168.0.3 at 12-06-2022 14*42*40</message>
+</record>
