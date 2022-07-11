@@ -56,9 +56,9 @@ public class QueueImpl<T> implements Queue<T> {
 			throw new QueueUnderflowException();
 		}
 
-		T head = this.head();
+		T element = this.head();
 		this.shiftLeft();
-		return head;
+		return element;
 	}
 
 }
