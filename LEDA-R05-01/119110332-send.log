@@ -17,3 +17,13 @@
   <level>FINE</level>
   <message>File 119110332-VINICIUS MORAES VALENCA VARJAO.zip was received. It was sent by VINICIUS MORAES VALENCA VARJAO from IP 26.197.153.183 at 11-07-2022 17*08*57</message>
 </record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-07-11T20:48:57.050-0300</date>
+  <logger>VINICIUS MORAES VALENCA VARJAO</logger>
+  <level>FINE</level>
+  <message>File 119110332-VINICIUS MORAES VALENCA VARJAO.zip was received. It was sent by VINICIUS MORAES VALENCA VARJAO from IP 26.197.153.183 at 11-07-2022 20*48*57</message>
+</record>
