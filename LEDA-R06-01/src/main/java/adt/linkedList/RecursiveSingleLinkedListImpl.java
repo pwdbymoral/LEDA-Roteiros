@@ -12,20 +12,33 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return this.getData() == null;
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int size = 0;
+
+		if (!this.isEmpty()) {
+			size += this.getNext().size();
+		}
+		
+		return size;
 	}
 
 	@Override
 	public T search(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		T returnedElement = null;
+		
+		if (!isEmpty()) {
+			if (this.getData() == element) {
+				returnedElement = this.getData();
+			} else {
+				this.getNext().search(element)
+			}
+		}
+
+		return returnedElement;
 	}
 
 	@Override
