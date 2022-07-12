@@ -18,12 +18,20 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 	@Override
 	public int size() {
 		int size = 0;
-
-		if (!this.isEmpty()) {
-			size += this.getNext().size();
+		if (this.isEmpty()) {
+			return size;
+		} else {
+			size++;
+			return recursiveSize(this.getNext(), size);
 		}
-		
-		return size;
+	}
+
+	private int recursiveSize(RecursiveSingleLinkedListImpl<T> linkedList, int size) {
+		if (this.getNext() == null) {
+			return size;
+		} else {
+			return recursiveSize(this.getNext(), size) + 1;
+		}
 	}
 
 	@Override
@@ -34,7 +42,7 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 			if (this.getData() == element) {
 				returnedElement = this.getData();
 			} else {
-				this.getNext().search(element)
+				this.getNext().search(element);
 			}
 		}
 
@@ -43,20 +51,51 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public void insert(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (element != null) {
+			if (this.isEmpty()) {
+				this.setData(element);
+				this.setNext(new RecursiveSingleLinkedListImpl<T>());
+			} else {
+				this.getNext().insert(element);
+			}
+
+		}
 	}
 
 	@Override
 	public void remove(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (element != null && !this.isEmpty()) {
+			if (this.getData() == element) {
+				this.setData(this.getNext().getData());
+				this.setNext(this.getNext().getNext());
+			} else {
+				this.getNext().remove(element);
+			}
+		}
 	}
 
 	@Override
 	public T[] toArray() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		T[] array = (T[]) new Object[this.size()];
+		if (!this.isEmpty()) {
+			int index = 0;
+			array[index] = this.getData();
+			if (this.getNext().getData() != null) {
+				array = recursiveToArray(this.next, array, index);
+			}
+		} 
+
+		return array;
+	}
+
+	private T[] recursiveToArray(RecursiveSingleLinkedListImpl<T> linkedList, T[] array, int index) {
+		if (!this.isEmpty()) {
+			index++;
+			array[index] = this.getData();
+			array = recursiveToArray(this.next, array, index);
+		}
+		
+		return array;
 	}
 
 	public T getData() {
@@ -74,5 +113,12 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 	public void setNext(RecursiveSingleLinkedListImpl<T> next) {
 		this.next = next;
 	}
+
+	// private RecursiveSingleLinkedListImpl<T> createNewNode(T element, SingleLinkedListNode<T> next) {
+	// 	return new SingleLinkedListNode<T>(element, next);
+	// }
+	// private SingleLinkedListNode<T> createNilNode() {
+	// 	return createNewNode(null, null);
+	// }
 
 }
